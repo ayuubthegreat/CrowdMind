@@ -1,0 +1,59 @@
+#root {
+  text-align: center;
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: grey;
+}
+.section {
+  padding: 20px;
+  margin: 20px;
+  color: #444;
+  background-color: red;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 100vh;
+}
+.left {
+  text-align: left;
+  float: left;
+  width: 60%;
+}
+.navbar {
+  background-color: purple;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.navlinks {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.button {
+  padding: 1em 2em;
+  border-radius: 8px;
+  border: none;
+  background-color: #61dafb;
+  color: white;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
