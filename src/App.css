@@ -14,32 +14,45 @@
 }
 
 
-h1 {
-  font-size: 70px;
-}
-h2{
-  font-size: 40px;
-}
-h3{
-  font-size: 30px;
-}
-a{
+a, button{
   color: black;
   text-decoration: none;
-  border: 5px solid purple;
-  border-radius: 20px;
-  padding: 20px;
+  margin-left: 5px;
 }
+
 p{
   white-space: pre-wrap;
 }
-a:hover{
-  color: grey;
-  background-color: black;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+input {
+  padding: 10px;
+  border-radius: 10px;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.login-card {
+  display: flex;
+  flex-direction: column;
+  border: black solid 10px;
+  padding: 120px 45px;
+  width: 60%;
+  background-image: linear-gradient(red, rgb(197, 116, 197));
+  max-width: 500px;
 }
 .section {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 20px;
   margin: 20px;
   color: white;
@@ -54,13 +67,8 @@ a:hover{
   color: white;
   border-radius: 20px;
 }
-.backImg1 {
-  background-image: linear-gradient(red, purple);
-}
-button{
-  width: 20%;
-  height: 20%;
-}
+
+
 .midsectionBack1 {
   box-shadow: 0px 0px 20px 10px black;
   padding: 20px;
@@ -74,21 +82,42 @@ button{
   margin-top: 20px;
   width: 100%;
   height: fit-content;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .midSection {
   justify-content: center;
   border-radius: 20px;
-  width: 20%;
+  
   font-size: 20px;
 }
 .buttonContainer{
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 5px;
 }
-nav {
-
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-left: 3vh;
+  margin-right: 3vh;
 }
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: black;
+  padding: 10px;
+  margin-top: 30px;
+}
+.footer div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .button1{
   display: flex;
   gap:5px;
@@ -101,9 +130,21 @@ nav {
 }
 .icon1{
   background-image: linear-gradient(rgb(142, 22, 218), rgb(115, 140, 216));
-  padding: 20px;
-  border-radius: 20px;
+  padding: 15px;
+  border-radius: 10px;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainIcon{
+  background-image: linear-gradient(rgb(130, 74, 74), rgb(69, 160, 186));
+  margin: 0px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
 }
 .img1 {
   background-image: url("landscape-8775773_1920.jpg");
@@ -122,35 +163,23 @@ img {
   float: right;
   width: 40%;
 }
-.navbar {
-  background-color: white;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  box-shadow: 2px 1px 5px 3px;
-  display: flex;
-}
-.navbar div{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.navlinks {
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-  padding: 1rem;
-}
 
-.button {
-  padding: 1em 2em;
-  border-radius: 8px;
-  border: none;
-  background-color: #61dafb;
-  color: white;
-  cursor: pointer;
-  transition: background-color 300ms;
+
+
+
+
+.header{
+  display: flex;
+  flex-direction: column;
+
+}
+@media screen and (max-width: 800px) {
+  
+ 
+  .sectionRow {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }

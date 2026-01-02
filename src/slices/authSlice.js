@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${BASE_URL}/auth/login`, { email, password }, {
+            const response = await axios.post(`${BASE_URL}/api/auth/login`, { email, password }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -105,6 +105,7 @@ const authSlice = createSlice({
             state.token = null;
             state.error = null;
             localStorage.removeItem('token');
+            console.log("Logout successful.");
         }
     },
     extraReducers: (builder) => {
