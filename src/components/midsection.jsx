@@ -3,10 +3,10 @@ import { ArrowBigDown, Icon } from "lucide-react";
 
 
 
-const Midsection = ({index, title, desc, headerSize}) => {
+const Midsection = ({index, title, desc, headerSize, backgroundOverride = "midsectionBack1"}) => {
 return (
     <>
-    <div className="midSection">
+    <div className={`midSection ${backgroundOverride}`}>
         {index != null && <h3 className="icon1">{index}</h3>}
         <h3 style={{marginBottom : 0, fontSize : headerSize}}>{title}</h3>
         <p>{desc}</p>

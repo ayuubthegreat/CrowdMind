@@ -5,7 +5,7 @@ import Logo from "./logo";
 const Footer = () => {
     return (
         <nav className="footer">
-            <div>
+            <div className="footer_div">
               <Logo logoSize={20} />
             <LinksCustom linksMap={new Map([
                 ["/", "Home"],
@@ -14,7 +14,9 @@ const Footer = () => {
                 ["/contact", "Contact"],
             ])}></LinksCustom>  
             </div>
-           <p>(c) 2025 Gabi School, Ayuub Yusuf, and Anisa Mohamed Ali.</p>
+            <div className="footer_div">
+             <p>(c) 2025 Gabi School, Ayuub Yusuf, and Anisa Mohamed Ali.</p>   
+            </div>
         </nav>
     );
 }

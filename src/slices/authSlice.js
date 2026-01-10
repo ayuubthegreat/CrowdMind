@@ -16,7 +16,7 @@ export const login = createAsyncThunk(
     'auth/login',
     async ({ email, password }, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${BASE_URL}/api/auth/login`, { email, password }, {
+            const response = await axios.post(`${BASE_URL}/auth/login`, { email, password }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -42,9 +42,9 @@ export const login = createAsyncThunk(
 )
 export const register = createAsyncThunk(
     'auth/register',
-    async ({ username, email, password }, { rejectWithValue }) => {
+    async ({ name, email, password }, { rejectWithValue }) => {
         try {
-            const response = await axios.post(`${BASE_URL}/auth/register`, { username, email, password }, {
+            const response = await axios.post(`${BASE_URL}/auth/register`, { name, email, password }, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -146,7 +146,9 @@ const authSlice = createSlice({
         })
         .addCase(checkForUserInfo.fulfilled, (state, action) => {
             state.loading = false;
-            state.user = action.payload.data;
+            state.user = action.payload.data.user;
+            localStorage.removeItem('token');
+            localStorage.setItem('token', action.payload.data.token);
             console.log('User info successfully fetched:', action.payload, state.user);
         })
         .addCase(checkForUserInfo.rejected, (state, action) => {

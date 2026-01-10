@@ -53,7 +53,7 @@ workflows.`} headerSize={70} width={width}/>
             </div>
             <div className="sectionRow">
                 {Array.from(midsection1Details).map(([title, desc]) => (
-                    <Midsection key={title} title={title} desc={desc} headerSize={40} />
+                    <Midsection key={title} title={title} desc={desc} headerSize={40} backgroundOverride="none" />
                 ))}
             </div>
         </div>
@@ -79,7 +79,7 @@ your team needs to harness collective intelligence.`} headerSize={normalSize} wi
         </div>
         <div className="container">
             <Header title={"Ready to Unlock Your Team's Potential?"} desc={`Join thousands of teams already using ${WEBSITE_NAME} to turn great ideas into reality. Start your free account today and see the difference collaborative innovation makes.`} headerSize={normalSize} width={width}/>
-            <div className="buttonContainer">
+            <div className="flex_center">
                   <Link className="button1">Get Started For Free</Link> 
                   <CheckCircle></CheckCircle>
                   <p>No Credit Card Required!</p>

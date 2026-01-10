@@ -8,7 +8,7 @@ const Logo = ({logoSize = 30, width}) => {
     console.log(width);
     return (
         <>
-         <div style={{display : "flex", flexDirection : "row", gap : 10, alignItems: "center", justifyContent: "center"}} onClick={() => {navigate("/")}}>
+         <div className="logoTitle" style={{display : "flex", flexDirection : "row", gap : 10, alignItems: "center", justifyContent: "center"}} onClick={() => {navigate("/")}}>
              <p style={{fontSize: (logoSize / (width < 800 ? 2 : 1)) , padding: (logoSize / 2)}} className="mainIcon"><strong>CM</strong></p>
             <h3 style={{fontSize: (logoSize / (width < 800 ? 2 : 1))}}>{WEBSITE_NAME}</h3>   
             </div>
