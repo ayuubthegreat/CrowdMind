@@ -1,22 +1,21 @@
+import { Check } from "lucide-react";
 
 
-const Dropdown = ({title, dropdownOptions = [], functions}) => {
-    const id = Math.floor(Math.random() * 1000000);
-    console.log(id);
+const Dropdown = ({title, dropdownOptions = [], integerForCheckBox, ID}) => {
     return (
         <>
         <div className="dropdownParent">
             <button onClick={() => {
-                document.getElementById(`${title}--dropdown`).classList.toggle("hidden");
+                document.getElementById(`${ID}--dropdown`).classList.toggle("hidden");
             }}>{title}</button>
-            <div id={`${title}--dropdown`} className="dropdown">
+            <div id={`${ID}--dropdown`} className="dropdown">
                 {Array.from(dropdownOptions).map(([one, two], index) => {
                     return (
                       <>
                     <p onClick={() => {
-                       document.getElementById(`${title}--dropdown`).classList.toggle("hidden");
+                       document.getElementById(`${ID}--dropdown`).classList.toggle("hidden");
                        two(); 
-                    }}>{one}</p>
+                    }}>{index === integerForCheckBox && <Check></Check>}{one}</p>
                     </>  
                     )
                 })}

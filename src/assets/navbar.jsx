@@ -14,11 +14,11 @@ const ColorOfUserIcon = (role) => {
             console.log("User is user. Color used will be black.")
             return "rgba(175, 56, 56, 1)"
         case "admin": 
-            return new Map([
-                ["rgba(88, 153, 232, 1)", "rgba(113, 182, 225, 1)"]
-            ])
+            return "rgba(175, 56, 56, 1)"
+        case "supa_admin":
+            return "rgb(220, 215, 50)"
         default:
-            return "rgba(0, 0, 0, 0)"
+            return "rgb(0, 0, 0)"
     }
 }
 const Navbar = ({className, mapIfAuthenticated, mapIfNotAuthenticated}) => {
@@ -42,12 +42,15 @@ const Navbar = ({className, mapIfAuthenticated, mapIfNotAuthenticated}) => {
            <Logo width={width}></Logo>
            <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center", gap: 20}}>
             <LinksCustom linksMap={token != null ? mapIfAuthenticated : mapIfNotAuthenticated}/>
+            {(user != null && user.role === "supa_admin") && <>
+            <Link to={"/userTable"}>Users</Link>
+            </>}
             {(token == null || user == null) || <>
-            <button><PlusCircle></PlusCircle> New Post</button>
             <div className="user_profile">
                 <h3>{user.name}</h3>
                 <h3 className="user_profile_role" style={{backgroundColor: `${ColorOfUserIcon(user.role)}`, color: "white"}}>{user.role}</h3>
             </div>
+            
             
             </>}
              {token == null || <a onClick={handleLogout}>Logout</a>}
