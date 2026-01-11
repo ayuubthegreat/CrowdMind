@@ -45,10 +45,10 @@ export const newPost = createAsyncThunk(
 )
 export const editPost = createAsyncThunk(
     'post/editPost',
-    async ({ title, description, content, priority, status, idPost, stringedTags}, {rejectWithValue}) => {
+    async ({ title, description, content, priority, status, idPost, tags}, {rejectWithValue}) => {
         try {
             console.log(title, description, content, idPost);
-            const response = await axios.post(`${BASE_URL}/post/editPost`, {title, description, content, priority, status, idPost, stringedTags}, {
+            const response = await axios.post(`${BASE_URL}/post/editPost`, {title, description, content, priority, status, idPost, stringedTags: tags}, {
                 headers: {
                     'Content-Type': 'application/json',
                     "Authorization": `Bearer ${localStorage.getItem('token') || ''}`,

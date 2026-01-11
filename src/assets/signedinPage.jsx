@@ -205,7 +205,7 @@ const SignedinPage = () => {
             
             <div className="communityPostContainer">
                 
-             {userPosts.length == 0 ? <p>No community posts exist. Try creating one!</p> : real_user_posts.map(({title, description, content, createdAt, updatedAt, priority, id, status, user: userPost, tags}, index) => {
+             {real_user_posts.length == 0 ? <p>No community posts exist. Try creating one!</p> : real_user_posts.map(({title, description, content, createdAt, updatedAt, priority, id, status, user: userPost, tags}, index) => {
                 return (
                     <>
                     <div className="communityPost" style={{backgroundImage: `${status === "done" ? "linear-gradient(rgb(109, 190, 74), rgb(73, 174, 60))" : ""}`}}>
@@ -218,13 +218,13 @@ const SignedinPage = () => {
                     <div className="column">
                         {(user.id === userPost.id || user.role !== "user") && <><div className="row">
                           <button onClick={() => {setShowWindow(true); setIsEditing(true);
-                             setOriginalContent(userPosts[index].content); setOriginalDescription(userPosts[index].description)
-                             setOriginalTitle(userPosts[index].title); setID(userPosts[index].id)}}>Edit</button>
+                             setOriginalContent(real_user_posts[index].content); setOriginalDescription(real_user_posts[index].description)
+                             setOriginalTitle(real_user_posts[index].title); setID(real_user_posts[index].id); setOriginalTags(real_user_posts[index].tags)}}>Edit</button>
                         <button onClick={() => {
                             async function deletePostInner() {
                                 try {
-                                    console.log(userPosts[index].id);
-                                    await dispatch(deletePost(userPosts[index])).unwrap();
+                                    console.log(real_user_posts[index].id);
+                                    await dispatch(deletePost(real_user_posts[index])).unwrap();
                                     console.log("Card deleted!");
                                      dispatch(getAllUserPosts()).unwrap();
                                 } catch (error) {
